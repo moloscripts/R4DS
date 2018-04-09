@@ -43,6 +43,10 @@ ggplot(mpg) + geom_smooth(aes(x= engine_displacement, y = f_e_city, color = drv)
 ggplot(mpg, aes(x = engine_displacement, y = f_e_city)) + geom_point(aes(color = drv)) + geom_smooth()
 ggplot(mpg, aes(x = engine_displacement, y = f_e_city, color = drv)) + geom_point() + geom_smooth(se = FALSE)
 
+# To 'solve the problem of overplotting' whereby the scatter plots are somehow overlapping, one uses position = 'jitter'
+# Box Plot - Visualse the quartiles, median, lower and higher extremes
+ggplot(mpg) + geom_point(aes(x = engine_displacement, y = f_e_highway), position = 'jitter')
+ggplot(mpg) + geom_boxplot(aes(x = drv, y = f_e_highway))
 
 
 
